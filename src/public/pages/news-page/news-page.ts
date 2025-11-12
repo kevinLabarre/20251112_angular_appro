@@ -3,17 +3,18 @@ import { NewsService } from '../../services/news/news-service';
 import { IResponseApi } from '../../interfaces/IResponseApi';
 import { INews } from '../../interfaces/INews';
 import { NewsList } from "../../components/news-list/news-list";
+import { ConsigneNewsPagination } from "../../components/consigne-news-pagination/consigne-news-pagination";
 
 @Component({
   selector: 'app-news-page',
-  imports: [NewsList],
+  imports: [NewsList, ConsigneNewsPagination],
   templateUrl: './news-page.html',
   styleUrl: './news-page.css',
 })
 export class NewsPage implements OnInit {
   private service = inject(NewsService)
 
-  intialLoad = { page: 1, perPage: 10 }
+  intialLoad = { page: 1, perPage: 6 }
 
   respApi?: IResponseApi<INews>
 
@@ -29,11 +30,25 @@ export class NewsPage implements OnInit {
   }
 
   handlePrev() {
-    console.log('prev')
+    if (this.respApi) {
+      if (this.respApi.prev)
+        this.loadNews(this.respApi.prev, this.intialLoad.perPage)
+    }
   }
 
   handleNext() {
-    console.log('next')
+    if (this.respApi) {
+      this.respApi.next && this.loadNews(this.respApi.next, this.intialLoad.perPage)
+    }
   }
+
+  get pageNbr() {
+    if (this.respApi) {
+      return this.respApi.prev ? this.respApi.prev + 1 : 1 // Si prev est null --> on est sur la page 1
+      // return this.respApi.prev ? this.respApi.prev + 1 : this.respApi.next! - 1
+    }
+    return
+  }
+
 
 }

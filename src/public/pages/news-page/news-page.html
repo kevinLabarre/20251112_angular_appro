@@ -1,23 +1,19 @@
 <section>
   <h1>Nos actualités</h1>
 
+  <h2>Consigne</h2>
+  <app-consigne-news-pagination />
+
+  <h2>Solution</h2>
   @if(respApi){
   <app-news-list [newsList]="respApi.data" />
-  }
-
   <div class="w-fit m-auto mt-5">
-    <button (click)="handlePrev()" class="btn btn-secondary">Précédent</button>
-    <button (click)="handleNext()" class="btn btn-secondary ml-5">Suivant</button>
+    <button (click)="handlePrev()" [disabled]="!respApi.prev" class="btn btn-secondary">Précédent</button>
+    <button (click)="handleNext()" [disabled]="!respApi.next" class="btn btn-secondary ml-5">Suivant</button>
   </div>
-
-
-  <pre>
-      1. Implémenter les méthodes handlePrev et handleNext
-      2. Afficher le n° de la page sur laquelle on se trouve et le nombre total de pages
-          ( exemple: "Page 1 sur 10" )
-      3. Désactiver le bouton précédent quand on est sur la première page
-      3_BIS. Désactiver le bouton suivant quand on est sur la dernière page.
-  </pre>
-
+  <div class="w-fit m-auto mt-5">
+    <p>page {{pageNbr}} sur {{respApi.pages}}</p>
+  </div>
+  }
 
 </section>

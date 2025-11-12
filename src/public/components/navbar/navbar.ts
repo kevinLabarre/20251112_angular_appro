@@ -13,7 +13,9 @@ export class Navbar {
 
   navItems = [
     { href: "actualites", label: "Actualités" },
-    { href: "comptes", label: "Nos comptes" }
+    { href: "comptes", label: "Nos comptes" },
+    { href: "signaux-demo", label: "Démo: les signaux" },
+    { href: "actualites-avec-signaux", label: "Actualités avec signaux" },
   ]
 
 }

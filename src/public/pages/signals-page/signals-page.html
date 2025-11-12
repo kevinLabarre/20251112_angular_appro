@@ -1,0 +1,30 @@
+<section>
+  <h1>Les signaux</h1>
+
+  <h2>Variable classique (pour les application non zoneLess)</h2>
+
+  <div class="p-2 m-2 border">
+    <p>count: {{count}}</p>
+    <button (click)="handleAdd()" class="btn">+</button>
+    <button (click)="handleSub()" class="btn">-</button>
+    <button (click)="handleReset()" class="btn">Reset</button>
+  </div>
+
+  <h2>Variable avec signal (pour les applications zoneLess)</h2>
+
+  <div class="p-2 m-2 border">
+    <p>count avec signal: {{countSignal()}}</p>
+    <button (click)="handleAdd_withSignal()" class="btn">+</button>
+    <button (click)="handleSub_withSignal()" class="btn">-</button>
+    <button (click)="handleReset_withSignal()" class="btn">Reset</button>
+  </div>
+
+  <h2>Les méthodes computed() et effect()</h2>
+  <p class="pb-2"><strong>
+      Computed est utilisé pour déclencher des calculs de valeurs dérivés de nos signaux.
+      Computed est directement lié à une variable
+    </strong>
+  </p>
+  <p>Count carré calculé avec computed : {{countCarree()}}</p>
+
+</section>
