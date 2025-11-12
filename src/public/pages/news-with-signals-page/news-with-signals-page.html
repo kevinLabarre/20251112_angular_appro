@@ -1,4 +1,30 @@
 <section>
   <h1>Nos actualités</h1>
   <app-consigne-news-pagination />
+
+  <h2>Solution</h2>
+  <app-news-list [newsList]="respApi().data" />
+
+
+  <div class="w-fit m-auto mt-5">
+    <button (click)="handlePrev()" [disabled]="!respApi().prev" class="btn btn-secondary">Précédent</button>
+    <button (click)="handleNext()" [disabled]="!respApi().next" class="btn btn-secondary ml-5">Suivant</button>
+    <div class="w-fit m-auto mt-5">
+      <p>page {{pageNbr}} sur {{respApi().pages}} </p>
+    </div>
+  </div>
+
+  <!--
+  <div class="w-fit m-auto mt-5">
+    <button (click)="handlePrev()" [disabled]="!respApi.prev" class="btn btn-secondary">Précédent</button>
+    <button (click)="handleNext()" [disabled]="!respApi.next" class="btn btn-secondary ml-5">Suivant</button>
+  </div>
+  <div class="w-fit m-auto mt-5">
+    <p>page _ sur _ </p>
+  </div>
+
+  -->
+
+
+
 </section>
