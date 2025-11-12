@@ -18,7 +18,7 @@ export class HomePage implements OnInit {
   news?: INews[]
 
   ngOnInit(): void {
-    this.newsService.getNews().subscribe({
+    this.newsService.get3News().subscribe({
       next: (resp) => this.news = resp,
       error: (e) => console.error(e),
       complete: () => console.log('get complete')

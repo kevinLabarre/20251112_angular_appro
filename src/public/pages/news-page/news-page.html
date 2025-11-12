@@ -1,1 +1,13 @@
-<p>news-page works!</p>
+<section>
+  <h1>Nos actualités</h1>
+
+  @if(respApi){
+  <app-news-list [newsList]="respApi.data" />
+  }
+
+  <div class="w-fit m-auto mt-5">
+    <button (click)="handlePrev()" class="btn btn-secondary">Précédent</button>
+    <button (click)="handleNext()" class="btn btn-secondary ml-5">Suivant</button>
+  </div>
+
+</section>
