@@ -13,14 +13,16 @@ import { NewsList } from "../../components/news-list/news-list";
 export class NewsPage implements OnInit {
   private service = inject(NewsService)
 
+  intialLoad = { page: 1, perPage: 10 }
+
   respApi?: IResponseApi<INews>
 
   ngOnInit(): void {
-    this.loadNews()
+    this.loadNews(this.intialLoad.page, this.intialLoad.perPage)
   }
 
-  loadNews() {
-    this.service.getPaginateNews(1, 10).subscribe({
+  loadNews(page: number, perPage: number) {
+    this.service.getPaginateNews(page, perPage).subscribe({
       next: (resp) => this.respApi = resp,
       error: (e) => console.error(e)
     })
