@@ -1,1 +1,16 @@
-<p>home-page works!</p>
+<section>
+  <app-bank-presentation />
+
+  <section class="border-t border-gray-800 m-10">
+    <div class="flex justify-center mb-10">
+      <div class="w-fit tooltip tooltip-bottom" data-tip="voir toutes les actualités">
+        <div routerLink="/actualites" class="cursor-pointer hover:bg-base-200 rounded">
+          <h1>Nos actualités</h1>
+        </div>
+      </div>
+    </div>
+    @if(news){
+    <app-news-list [newsList]="news" />
+    }
+  </section>
+</section>
