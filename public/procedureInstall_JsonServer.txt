@@ -1,0 +1,7 @@
+1. installation du package 'json-server' --> npm i json-server
+2. Créer un fichier db.json à la racine du projet
+3. Remplir le fichier db.json ( y placer un ou pluiseurs jeu de données)
+4. Rajouter le raccourci suivant (dans les scripts du fichier package.json)
+    --> "json-server": "json-server db.json"
+
+5. On peut lancer le json-server avec : 'npm run json-server'
