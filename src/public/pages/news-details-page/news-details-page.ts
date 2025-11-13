@@ -3,6 +3,7 @@ import { ActivatedRoute, RouterLink, RouterLinkActive, RouterOutlet } from '@ang
 import { NewsService } from '../../services/news/news-service';
 import { INews } from '../../interfaces/INews';
 import { NewsCard } from "../../components/news-card/news-card";
+import { ShareNewsService } from '../../services/share-news-service';
 
 @Component({
   selector: 'app-news-details-page',
@@ -14,13 +15,20 @@ export class NewsDetailsPage {
 
   news = signal<INews>({} as INews)
 
-  constructor(private activatedRoute: ActivatedRoute, private service: NewsService) {
+  constructor(
+    private activatedRoute: ActivatedRoute,
+    private service: NewsService,
+    private shareService: ShareNewsService
+  ) {
     this.activatedRoute.params.subscribe((params) => this.loadNews(params['id']))
   }
 
   loadNews(id: number) {
     this.service.getNewsById(id).subscribe({
-      next: resp => this.news.set(resp),
+      next: resp => {
+        this.news.set(resp)
+        this.shareService.shareNews(resp)
+      },
       error: e => console.error(e)
     })
   }
