@@ -1,5 +1,8 @@
 <div>
-  <h2>Mise à jour</h2>
+
+  <h1>Mise à jour actualité</h1>
+
+  <h2>Tp mise à jour</h2>
 
   <pre>
     Implémenter le composant, en utilisant un formulaire permettant de faire la mise à jour d'une actuualité
@@ -9,4 +12,31 @@
       - Tester la mise à jour de l'actu (vérifier sur db.json)
       - Mettre à jour l'actu affichée au dessus du formulaire
   </pre>
+
+  <h2>Correction</h2>
+  <form class="w-fit m-auto" [formGroup]="newsForm" (ngSubmit)="onSubmit()">
+    <fieldset class="fieldset bg-base-200 border-base-300 rounded-box w-xs border p-4">
+      <legend class="fieldset-legend">Formulaire de mise à jour</legend>
+
+      <label class="label">Titre</label>
+      <input type="text" class="input" formControlName="titre" />
+      @if(titleError){
+      <span class="text-error font-bold">{{titleError}}</span>
+      }
+
+      <label class="label">Description</label>
+      <input type="text" class="input" formControlName="texte" />
+      @if(texteError){
+      <span class="text-error font-bold">{{texteError}}</span>
+      }
+
+      <label class="label">catégorie</label>
+      <input type="text" class="input" formControlName="categorie" />
+
+      <label class="label">Adresse de l'image</label>
+      <input type="text" class="input" formControlName="image" />
+
+    </fieldset>
+    <button class="btn btn-warning">Mettre à jour</button>
+  </form>
 </div>

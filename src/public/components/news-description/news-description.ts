@@ -1,5 +1,5 @@
 import { Component, inject, OnDestroy, OnInit, signal } from '@angular/core';
-import { ShareNewsService } from '../../services/share-news-service';
+import { ShareNewsService } from '../../services/shareNews/share-news-service';
 import { Subscription } from 'rxjs';
 
 @Component({

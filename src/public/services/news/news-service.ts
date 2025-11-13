@@ -30,4 +30,10 @@ export class NewsService {
     return this.http.get<INews>(`${this.newsUrl}/${id}`)
   }
 
+  updateNews(newsToUpdate: INews): Observable<INews> {
+    if (newsToUpdate.id)
+      return this.http.put<INews>(`${this.newsUrl}/${newsToUpdate.id}`, newsToUpdate)
+    else throw new Error("L'actualité n'a pas d'id. On a besoin de l'id pour les mises à jours")
+  }
+
 }
