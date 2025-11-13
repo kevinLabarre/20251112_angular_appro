@@ -14,16 +14,14 @@
     </div>
   </div>
 
-  <!--
   <div class="w-fit m-auto mt-5">
-    <button (click)="handlePrev()" [disabled]="!respApi.prev" class="btn btn-secondary">Précédent</button>
-    <button (click)="handleNext()" [disabled]="!respApi.next" class="btn btn-secondary ml-5">Suivant</button>
-  </div>
-  <div class="w-fit m-auto mt-5">
-    <p>page _ sur _ </p>
+    <app-pagination-buttons [nbrButtons]="respApi().pages" (handleClickEvent)="handlePaginationButton($event)" />
   </div>
 
-  -->
+  <div class="w-fit m-auto mt-5">
+    <app-pagination-buttons-with-new-syntax [nbrButtons]="respApi().pages"
+      (handleClickEvent)="handlePaginationButton($event)" />
+  </div>
 
 
 
