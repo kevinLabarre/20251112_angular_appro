@@ -1,0 +1,16 @@
+<section>
+  <h1>Détails actualité</h1>
+  <h2>Actu récupéré grâce à l'id présente dans l'url</h2>
+  <div class="w-1/3 m-auto">
+    <app-news-card [news]="news()" />
+
+  </div>
+
+  <ul class="menu menu-horizontal bg-base-200">
+    <li><a [routerLink]="['mise-a-jour']" routerLinkActive="menu-active">Mise à jour</a></li>
+    <li><a [routerLink]="['description']" routerLinkActive="menu-active">Description</a></li>
+    <li><a [routerLink]="['devis']" routerLinkActive="menu-active">Devis</a></li>
+  </ul>
+
+  <router-outlet />
+</section>

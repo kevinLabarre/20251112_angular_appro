@@ -26,4 +26,8 @@ export class NewsService {
     return this.http.get<IResponseApi<INews>>(`${this.newsUrl}?_page=${page}&_per_page=${perPage}`)
   }
 
+  getNewsById(id: number): Observable<INews> {
+    return this.http.get<INews>(`${this.newsUrl}/${id}`)
+  }
+
 }
