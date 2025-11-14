@@ -8,6 +8,8 @@ import { NewsDetailsPage } from "../pages/news-details-page/news-details-page";
 import { UpdateNews } from "../components/update-news/update-news";
 import { NewsDescription } from "../components/news-description/news-description";
 import { NewsDevis } from "../components/news-devis/news-devis";
+import { LoginPage } from "../pages/login-page/login-page";
+import { MyFirstUnitsTest } from "../pages/my-first-units-test/my-first-units-test";
 
 export const PUBLIC_ROUTES: Routes = [
   { path: "", component: HomePage, title: "Accueil" },
@@ -23,6 +25,8 @@ export const PUBLIC_ROUTES: Routes = [
       { path: "devis", component: NewsDevis, title: "Devis de l'actualité" }
     ]
   },
+  { path: "premiers-tests-unitaires", component: MyFirstUnitsTest, title: "Premiers tests unitaires" },
+  { path: "connexion", component: LoginPage, title: "Connexion" },
 
   // Si on a des changements de noms au niveau des routes, sur des routes partagés à des utilisateurs, on peut utiliser de redirectTo
   { path: "account", redirectTo: "comptes", pathMatch: "full" }

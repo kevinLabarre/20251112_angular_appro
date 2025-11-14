@@ -101,13 +101,12 @@
       "image": "https://images.unsplash.com/photo-1531746790731-6c087fecd65a?q=80&w=800"
     },
     {
-      "id": "4",
-      "categorie": "Économie",
       "titre": "Inflation record : le café de notre distributeur atteint 5€",
       "texte": "Suite à l'inflation mondiale, le prix du café dans nos distributeurs a atteint un sommet historique de 5€. Notre économiste en chef suggère d'investir dans des gobelets usagés, dont la valeur a augmenté de 300% ce trimestre.",
-      "datePublication": "2023-09-28",
-      "dateModification": "2023-10-05",
-      "image": "https://images.unsplash.com/photo-1497515114629-f71d768fd07c?q=80&w=800"
+      "categorie": "Économie",
+      "image": "https://images.unsplash.com/photo-1497515114629-f71d768fd07c?q=80&w=800",
+      "id": "4",
+      "dateModification": "2025-11-14T08:51:21.815Z"
     },
     {
       "id": "5",

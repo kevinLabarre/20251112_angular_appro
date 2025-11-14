@@ -16,6 +16,7 @@ export class Navbar {
     { href: "comptes", label: "Nos comptes" },
     { href: "signaux-demo", label: "Démo: les signaux" },
     { href: "actualites-avec-signaux", label: "Actualités avec signaux" },
+    { href: "premiers-tests-unitaires", label: "Tests unitaires" },
   ]
 
 }

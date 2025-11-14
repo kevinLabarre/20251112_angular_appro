@@ -3,6 +3,7 @@ import { inject, Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { INews } from '../../interfaces/INews';
 import { IResponseApi } from '../../interfaces/IResponseApi';
+import { environment } from '../../../environments/environment';
 
 @Injectable({
   providedIn: 'root',
@@ -12,7 +13,9 @@ export class NewsService {
   // constructor(private http: HttpClient) {}
   private http = inject(HttpClient)
 
-  newsUrl = "http://localhost:3000/actualites"
+  jsonServer_url = environment.jsonServerUrl
+
+  newsUrl = `${this.jsonServer_url}/actualites`
 
   getNews(): Observable<INews[]> {
     return this.http.get<INews[]>(this.newsUrl)

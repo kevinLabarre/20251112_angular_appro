@@ -1,0 +1,23 @@
+<section>
+  <h1>Premiers tests unitaires sur un composant</h1>
+
+  <a class="font-bold underline text-primary" href="https://angular.fr/unit-tests/component.html">Exemple venant
+    d'ici</a>
+
+  <h1>Liste des éléments testés: </h1>
+  <ul>
+    <li>Service FirstUnitTestsService</li>
+    <li>Composant my-first-units-test</li>
+    <li>Test d'un @Output sur pagination-buttons</li>
+  </ul>
+
+  <h1>Exemple : </h1>
+
+  <h2 id="titleId">{{ title }}</h2>
+  <button class="btn" (click)="addUser()">Ajouter un utilisateur</button>
+  <ul id="userList">
+    @for (user of users ; track user) {
+    <li>{{ user }}</li>
+    }
+  </ul>
+</section>

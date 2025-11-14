@@ -66,7 +66,7 @@ export class UpdateNews implements OnInit, OnDestroy {
 
     if (error) {
       // objet error si il y a erreur:
-      //  erroObject = { required: true, minlength: {requiredLength: 10, actualLength: 1} }
+      //  erroObject = { required: true } OU , {minlength: {requiredLength: 10, actualLength: 1}}
 
       if (error['required']) {
         return "La description est requise"
